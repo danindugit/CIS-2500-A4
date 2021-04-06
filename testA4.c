@@ -17,12 +17,81 @@
 #include "headerA4.h"
 
 int main(){
-    tweet* tweetList;
+    tweet* head;
+    tweet* tail;
+    tweet* t1;
+    tweet* t2;
+    tweet* t3;
+    tweet* t4;
+    tweet* t5;
+    tweet* t6;
 
-    tweetList = NULL;
+    head = NULL;
+    tail = NULL;
+    t1 = malloc(sizeof(tweet));
+    t2 = malloc(sizeof(tweet));
+    t3 = malloc(sizeof(tweet));
+    t4 = malloc(sizeof(tweet));
+    t5 = malloc(sizeof(tweet));
+    t6 = malloc(sizeof(tweet));
+
+    t1->id = 100;
+    strcpy(t1->user, "uog");
+    strcpy(t1->text, "This is from guelph");
+    t1->next = NULL;
+
+    t2->id = 200;
+    strcpy(t2->user, "uoft");
+    strcpy(t2->text, "This is from toronto");
+    t2->next = NULL;
+
+    t3->id = 300;
+    strcpy(t3->user, "western");
+    strcpy(t3->text, "This is from london");
+    t3->next = NULL;
+
+    t4->id = 400;
+    strcpy(t4->user, "mac");
+    strcpy(t4->text, "This is from hamilton");
+    t4->next = NULL;
+
+    t5->id = 500;
+    strcpy(t5->user, "uow");
+    strcpy(t5->text, "This is from waterloo");
+    t5->next = NULL;
+
+    t6->id = 600;
+    strcpy(t6->user, "utm");
+    strcpy(t6->text, "This is from sauga");
+    t6->next = NULL;
 
     //check if empty
-    printf("isEmpty returns %d\n", isEmpty(tweetList));
+    printf("isEmpty returns %d\n", isEmpty(head));
+    dequeue(&head, &tail);
+    printQueue(head);
+
+    //enqueue all
+    enqueue(&head, &tail, t3);
+    enqueue(&head, &tail, t4);
+    enqueue(&head, &tail, t2);
+    enqueue(&head, &tail, t6);
+    enqueue(&head, &tail, t5);
+    enqueue(&head, &tail, t1);
+    printf("isEmpty returns %d\n", isEmpty(head));
+    printQueue(head);
+
+    //dequeue 2
+    dequeue(&head, &tail);
+    dequeue(&head, &tail);
+    printf("isEmpty returns %d\n", isEmpty(head));
+    printQueue(head);
+
+    free(t1);
+    free(t2);
+    free(t3);
+    free(t4);
+    free(t5);
+    free(t6);
 
     return 0;
 }

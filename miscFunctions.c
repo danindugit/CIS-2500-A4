@@ -6,9 +6,17 @@
  Out: none
 *******/
 void sortID (tweet ** head, tweet ** tail){
+    tweet* ptr1;
+    tweet* ptr2;
+    tweet* temp;
+
     if(isEmpty(*head)){
         printf("Cannot sort because this tweet list is empty.\n");
         return;
+    }
+    //bubble sort
+    while(ptr1 != NULL){
+        
     }
 }
 

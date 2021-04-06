@@ -19,3 +19,5 @@ void printQueue (tweet * head);
 void sortID (tweet ** head, tweet ** tail);
 void reverse (tweet ** head, tweet ** tail);
 void sortUsername (tweet ** head, tweet ** tail);
+
+void swap(tweet* node1, tweet* node2);

@@ -17,6 +17,12 @@
 #include "headerA4.h"
 
 int main(){
+    tweet* tweetList;
+
+    tweetList = NULL;
+
+    //check if empty
+    printf("isEmpty returns %d\n", isEmpty(tweetList));
 
     return 0;
 }

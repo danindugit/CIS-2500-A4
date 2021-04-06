@@ -6,7 +6,10 @@
  Out: none
 *******/
 void sortID (tweet ** head, tweet ** tail){
-
+    if(isEmpty(*head)){
+        printf("Cannot sort because this tweet list is empty.\n");
+        return;
+    }
 }
 
 /******
@@ -15,7 +18,10 @@ void sortID (tweet ** head, tweet ** tail){
  Out: none
 *******/
 void reverse (tweet ** head, tweet ** tail){
-
+    if(isEmpty(*head)){
+        printf("Cannot reverse because this tweet list is empty.\n");
+        return;
+    }
 }
 
 /******
@@ -24,5 +30,8 @@ void reverse (tweet ** head, tweet ** tail){
  Out: none
 *******/
 void sortUsername (tweet ** head, tweet ** tail){
-
+    if(isEmpty(*head)){
+        printf("Cannot sort because this tweet list is empty.\n");
+        return;
+    }
 }

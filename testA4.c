@@ -65,42 +65,112 @@ int main(){
     strcpy(t6->text, "This is from sauga");
     t6->next = NULL;
 
-    //check if empty
-    printf("isEmpty returns %d\n", isEmpty(head));
+    //test with empty list
+    printf("TESTING WITH AN EMPTY QUEUE:\n-------------------\n");
+    printf("Testing isEmpty. Should return 1. [Iteration 1]:\n");
+    if(isEmpty(head) == 1){
+        printf("SUCCESS. isEmpty returns %d\n", isEmpty(head));
+    }
+    else{
+        printf("FAIL. isEmpty returns %d\n", isEmpty(head));
+    }
+    printf("Testing dequeue. Should result in error message. [Iteration 1]:\n");
     dequeue(&head, &tail);
+    printf("Testing sortID. Should result in error message. [Iteration 1]:\n");
     sortID(&head, &tail);
+    printf("Testing sortUsername. Should result in error message. [Iteration 1]:\n");
     sortUsername(&head, &tail);
-    printQueue(head);
-    //sort by username
-    sortUsername(&head, &tail);
+    printf("Testing reverse. Should result in error message. [Iteration 1]:\n");
+    reverse(&head, &tail);
+    printf("Testing printQueue. Should result in error message. [Iteration 1]:\n");
     printQueue(head);
 
     //enqueue all
+    printf("\nTESTING WITH 6 ENQUEUES\n-------------------\n");
+    printf("Testing enqueue with the following tweet: [Iteration 1]\n");
+    printf("%d: Created by %s: %s\n", t3->id, t3->user, t3->text);
     enqueue(&head, &tail, t3);
-    enqueue(&head, &tail, t4);
-    enqueue(&head, &tail, t2);
-    enqueue(&head, &tail, t6);
-    enqueue(&head, &tail, t5);
-    enqueue(&head, &tail, t1);
-    printf("isEmpty returns %d\n", isEmpty(head));
+    printf("Printing queue to verify enqueue:\n");
     printQueue(head);
+    printf("Testing enqueue with the following tweet: [Iteration 2]\n");
+    printf("%d: Created by %s: %s\n", t4->id, t4->user, t4->text);
+    enqueue(&head, &tail, t4);
+    printf("Printing queue to verify enqueue:\n");
+    printQueue(head);
+    printf("Testing enqueue with the following tweet: [Iteration 3]\n");
+    printf("%d: Created by %s: %s\n", t2->id, t2->user, t2->text);
+    enqueue(&head, &tail, t2);
+    printf("Printing queue to verify enqueue:\n");
+    printQueue(head);
+    printf("Testing enqueue with the following tweet: [Iteration 4]\n");
+    printf("%d: Created by %s: %s\n", t6->id, t6->user, t6->text);
+    enqueue(&head, &tail, t6);
+    printf("Printing queue to verify enqueue:\n");
+    printQueue(head);
+    printf("Testing enqueue with the following tweet: [Iteration 5]\n");
+    printf("%d: Created by %s: %s\n", t5->id, t5->user, t5->text);
+    enqueue(&head, &tail, t5);
+    printf("Printing queue to verify enqueue:\n");
+    printQueue(head);
+    printf("Testing enqueue with the following tweet: [Iteration 6]\n");
+    printf("%d: Created by %s: %s\n", t1->id, t1->user, t1->text);
+    enqueue(&head, &tail, t1);
+    printf("Printing queue to verify enqueue:\n");
+    printQueue(head);
+    printf("Testing isEmpty. Should return 0. [Iteration 2]:\n");
+    if(isEmpty(head) == 0){
+        printf("SUCCESS. isEmpty returns %d\n", isEmpty(head));
+    }
+    else{
+        printf("FAIL. isEmpty returns %d\n", isEmpty(head));
+    }
     //sort by ID
+    printf("Testing sortID. [Iteration 2]:\n");
     sortID(&head, &tail);
+    printf("Printing queue to verify sort by ID:\n");
     printQueue(head);
     //sort by username
+    printf("Testing sortUsername. [Iteration 2]:\n");
     sortUsername(&head, &tail);
+    printf("Printing queue to verify sort by username:\n");
+    printQueue(head);
+    //reverse
+    printf("Testing reverse. [Iteration 2]:\n");
+    reverse(&head, &tail);
+    printf("Printing queue to verify reverse:\n");
     printQueue(head);
 
+    printf("\nTESTING WITH 2 DEQUEUES\n-------------------\n");
     //dequeue 2
+    printf("Testing reverse. [Iteration 2]:\n");
     dequeue(&head, &tail);
-    dequeue(&head, &tail);
-    printf("isEmpty returns %d\n", isEmpty(head));
+    printf("Printing queue to verify dequeue:\n");
     printQueue(head);
+    printf("Testing reverse. [Iteration 3]:\n");
+    dequeue(&head, &tail);
+    printf("Printing queue to verify dequeue:\n");
+    printQueue(head);
+    printf("Testing isEmpty. Should return 0. [Iteration 3]:\n");
+    if(isEmpty(head) == 0){
+        printf("SUCCESS. isEmpty returns %d\n", isEmpty(head));
+    }
+    else{
+        printf("FAIL. isEmpty returns %d\n", isEmpty(head));
+    }
     //sort by ID
+    printf("Testing sortID. [Iteration 3]:\n");
     sortID(&head, &tail);
+    printf("Printing queue to verify sort by ID:\n");
     printQueue(head);
     //sort by username
+    printf("Testing sortUsername. [Iteration 3]:\n");
     sortUsername(&head, &tail);
+    printf("Printing queue to verify sort by username:\n");
+    printQueue(head);
+    //reverse
+    printf("Testing reverse. [Iteration 3]:\n");
+    reverse(&head, &tail);
+    printf("Printing queue to verify reverse:\n");
     printQueue(head);
 
     free(t1);

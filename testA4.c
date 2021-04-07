@@ -46,7 +46,7 @@ int main(){
     t2->next = NULL;
 
     t3->id = 300;
-    strcpy(t3->user, "western");
+    strcpy(t3->user, "Western");
     strcpy(t3->text, "This is from london");
     t3->next = NULL;
 
@@ -69,6 +69,10 @@ int main(){
     printf("isEmpty returns %d\n", isEmpty(head));
     dequeue(&head, &tail);
     sortID(&head, &tail);
+    sortUsername(&head, &tail);
+    printQueue(head);
+    //sort by username
+    sortUsername(&head, &tail);
     printQueue(head);
 
     //enqueue all
@@ -80,8 +84,11 @@ int main(){
     enqueue(&head, &tail, t1);
     printf("isEmpty returns %d\n", isEmpty(head));
     printQueue(head);
-    //sort
+    //sort by ID
     sortID(&head, &tail);
+    printQueue(head);
+    //sort by username
+    sortUsername(&head, &tail);
     printQueue(head);
 
     //dequeue 2
@@ -89,21 +96,12 @@ int main(){
     dequeue(&head, &tail);
     printf("isEmpty returns %d\n", isEmpty(head));
     printQueue(head);
-    //sort
+    //sort by ID
     sortID(&head, &tail);
     printQueue(head);
-
-    //BINGO BANGO BONGO TEST - alphabetical order
-    printf("\nBBB TEST:\n");
-    if(strcmp("dan", "dbn") < 0){
-        printf("Bingo: %d\n", strcmp("dan", "dbn"));
-    }
-    if(strcmp("bpple", "apple") > 0){
-        printf("Bango: %d\n", strcmp("bpple", "apple"));
-    }
-    if(strcmp("rock", "rock") == 0){
-        printf("BONGO!, and that's on roberto luONGO: %d\n", strcmp("rock", "rock"));
-    }
+    //sort by username
+    sortUsername(&head, &tail);
+    printQueue(head);
 
     free(t1);
     free(t2);

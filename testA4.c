@@ -178,10 +178,8 @@ int main(){
     //free allocated space
     free(t1);
     free(t2);
-    free(t3);
     free(t4);
     free(t5);
-    free(t6);
 
     return 0;
 }

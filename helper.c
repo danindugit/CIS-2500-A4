@@ -10,13 +10,14 @@ void swap(tweet* node1, tweet* node2){
     char tempUser[51];
     char tempText[141];
 
+    //store node1 data in the temp variables
     strcpy(tempUser, node1->user);
     strcpy(tempText, node1->text);
-
+    //move node2 data to node1
     node1->id = node2->id;
     strcpy(node1->user, node2->user);
     strcpy(node1->text, node2->text);
-    
+    //move temp data to node2
     node2->id = tempID;
     strcpy(node2->user, tempUser);
     strcpy(node2->text, tempText);

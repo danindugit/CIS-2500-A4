@@ -81,7 +81,7 @@ void sortUsername (tweet ** head, tweet ** tail){
     char word1[51];
     char word2[51];
     int k;
-
+    //initialize
     tempTail = *tail;
     ptr1 = *head;
     ptr2 = *head;
@@ -110,6 +110,7 @@ void sortUsername (tweet ** head, tweet ** tail){
                 }
             }
             if(strcmp(word1, word2) > 0){
+                //if word 1 should be alphabetically after word 2, swap the related ptrs
                 swap(ptr2, ptr2->next);
             }
             ptr2 = ptr2->next;

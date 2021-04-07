@@ -26,6 +26,7 @@ int main(){
     tweet* t5;
     tweet* t6;
 
+    //initialize and allocate space
     head = NULL;
     tail = NULL;
     t1 = malloc(sizeof(tweet));
@@ -35,6 +36,7 @@ int main(){
     t5 = malloc(sizeof(tweet));
     t6 = malloc(sizeof(tweet));
 
+    //enter static data for each node
     t1->id = 100;
     strcpy(t1->user, "uog");
     strcpy(t1->text, "This is from guelph");
@@ -173,6 +175,7 @@ int main(){
     printf("Printing queue to verify reverse:\n");
     printQueue(head);
 
+    //free allocated space
     free(t1);
     free(t2);
     free(t3);

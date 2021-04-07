@@ -6,14 +6,15 @@
  Out: none
 *******/
 void enqueue (tweet ** head, tweet ** tail, tweet * node){
-
+    //check if empty
     if(isEmpty(*head)){
+        //since this would be the first item in the queue, just set it equal to both the head and tail
         *head = node;
         *tail = node;
         printf("Tweet with id %d enqueued successfully\n", node->id); 
         return;
     }
-
+    //otherwise, add it to the rear of the queue (the tail node's next node)
     (*tail)->next = node;
 
     *tail = node;   
@@ -33,13 +34,13 @@ void dequeue (tweet ** head, tweet ** tail){
         printf("Dequeue unsuccessful because there are no tweets in this list\n");
         return;
     }
-
+    //remove item from the head of the queue
     temp = *head;
     ptr = temp->next;    
     *head = ptr;
 
     printf("Tweet with id %d dequeued successfully\n", (temp)->id); 
-
+    //free temporary variable
     free(temp);
 }
 
@@ -71,6 +72,7 @@ void printQueue (tweet * head){
     }
 
     while(ptr != NULL){
+        //print each item in the queue until the pointer points to the end of the queue
         printf("%d: Created by %s: %s\n", ptr->id, ptr->user, ptr->text);
         ptr = ptr->next;
     }

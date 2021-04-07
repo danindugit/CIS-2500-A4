@@ -40,10 +40,35 @@ void sortID (tweet ** head, tweet ** tail){
  Out: none
 *******/
 void reverse (tweet ** head, tweet ** tail){
+    tweet* endNode;
+    tweet* ptr;
+
+    endNode = *tail;
+
     if(isEmpty(*head)){
         printf("Cannot reverse because this tweet list is empty.\n");
         return;
     }
+
+    while(endNode != *head){
+        //swap all elements one by one until the end node is reached
+        //keep repeating this until the endnode is the head
+        //initialize ptr to the head
+        ptr = *head;
+        while(ptr->next != endNode){
+            swap(ptr, ptr->next);
+
+            ptr = ptr->next;
+        }
+        //swap one more time to catch the end node
+        swap(ptr, ptr->next);
+        //since we are now at the penultimate node, make this the new end node
+        printQueue(*head);
+        printf("\n");
+        endNode = ptr;
+    }
+    //success output
+    printf("The queue has been successfully reversed.\n");
 }
 
 /******

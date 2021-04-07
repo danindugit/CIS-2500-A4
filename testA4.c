@@ -68,6 +68,7 @@ int main(){
     //check if empty
     printf("isEmpty returns %d\n", isEmpty(head));
     dequeue(&head, &tail);
+    sortID(&head, &tail);
     printQueue(head);
 
     //enqueue all
@@ -79,12 +80,30 @@ int main(){
     enqueue(&head, &tail, t1);
     printf("isEmpty returns %d\n", isEmpty(head));
     printQueue(head);
+    //sort
+    sortID(&head, &tail);
+    printQueue(head);
 
     //dequeue 2
     dequeue(&head, &tail);
     dequeue(&head, &tail);
     printf("isEmpty returns %d\n", isEmpty(head));
     printQueue(head);
+    //sort
+    sortID(&head, &tail);
+    printQueue(head);
+
+    //BINGO BANGO BONGO TEST - alphabetical order
+    printf("\nBBB TEST:\n");
+    if(strcmp("dan", "dbn") < 0){
+        printf("Bingo: %d\n", strcmp("dan", "dbn"));
+    }
+    if(strcmp("bpple", "apple") > 0){
+        printf("Bango: %d\n", strcmp("bpple", "apple"));
+    }
+    if(strcmp("rock", "rock") == 0){
+        printf("BONGO!, and that's on roberto luONGO: %d\n", strcmp("rock", "rock"));
+    }
 
     free(t1);
     free(t2);

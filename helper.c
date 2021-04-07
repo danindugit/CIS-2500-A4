@@ -7,8 +7,11 @@
 *******/
 void swap(tweet* node1, tweet* node2){
     int tempID = node1->id;
-    char* tempUser = node1->user;
-    char* tempText = node1->text;
+    char tempUser[51];
+    char tempText[141];
+
+    strcpy(tempUser, node1->user);
+    strcpy(tempText, node1->text);
 
     node1->id = node2->id;
     strcpy(node1->user, node2->user);

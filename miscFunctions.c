@@ -63,8 +63,6 @@ void reverse (tweet ** head, tweet ** tail){
         //swap one more time to catch the end node
         swap(ptr, ptr->next);
         //since we are now at the penultimate node, make this the new end node
-        printQueue(*head);
-        printf("\n");
         endNode = ptr;
     }
     //success output

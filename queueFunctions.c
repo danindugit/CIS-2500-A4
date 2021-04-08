@@ -40,8 +40,6 @@ void dequeue (tweet ** head, tweet ** tail){
     *head = ptr;
 
     printf("Tweet with id %d dequeued successfully\n", (temp)->id); 
-    //free temporary variable
-    free(temp);
 }
 
 /******
